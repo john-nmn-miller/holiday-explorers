@@ -780,7 +780,12 @@
                         </p>
                     </div>
 
-                    <form class="contact-form" action="#" method="post">
+                    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms access key configured for Holiday Explorers. -->
+                        <input type="hidden" name="access_key" value="14a6b49c-8a4a-4dec-964f-9e1b5e556749" />
+                        <input type="hidden" name="subject" value="New enquiry from Holiday Explorers website" />
+                        <input type="hidden" name="from_name" value="Holiday Explorers website" />
+                        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required />
 
