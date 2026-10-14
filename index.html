@@ -797,13 +797,7 @@
                 <div class="contact-grid">
                     <div class="contact-details">
                         <p><strong>📧 Email</strong><br /><a href="mailto:reception@holidayexplorers.com.au">reception@holidayexplorers.com.au</a></p>
-                        <p><strong>🕐 Office Hours</strong><br />Monday–Friday, 9am–5pm</p>
-                        <hr style="margin:1.5rem 0; border-color:#dce1e6;" />
-                        <p><strong>Follow us</strong><br />Stay updated on our programs and events.</p>
-                        <p style="font-size:1.5rem;">
-                            <a href="#" aria-label="Facebook">📘</a>
-                            <a href="#" aria-label="Instagram">📸</a>
-                        </p>
+                        <p><strong>📮 Postal Address</strong><br />PO Box 4075, Norwood South 5067</p>
                     </div>
 
                     <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
@@ -860,18 +854,12 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4>Get Involved</h4>
-                    <ul>
-                        <li><a href="#contact">Join a Program</a></li>
-                        <li><a href="#contact">Volunteer</a></li>
-                        <li><a href="#contact">Partner With Us</a></li>
-                    </ul>
-                </div>
+                
                 <div>
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:reception@holidayexplorers.com.au">reception@holidayexplorers.com.au</a></li>
+<li>Postal Address: PO Box 4075, Norwood South 5067</li>
                     </ul>
                 </div>
             </div>
@@ -935,8 +923,8 @@
 
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', function () {
-                setNavOffset();
                 closeMobileMenu();
+                requestAnimationFrame(setNavOffset);
             });
         });
 
@@ -946,6 +934,11 @@
     window.addEventListener('load', function () {
         setNavOffset();
         if (location.hash) alignHashTarget();
+    });
+
+    window.addEventListener('hashchange', function () {
+        setNavOffset();
+        alignHashTarget();
     });
 
     window.addEventListener('resize', setNavOffset);
